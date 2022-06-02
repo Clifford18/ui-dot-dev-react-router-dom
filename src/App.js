@@ -2,29 +2,45 @@
 import './App.css';
 import {BrowserRouter as Router, Link, Route, Routes} from 'react-router-dom';
 import Home from "./Pages/Home";
-import Profile from "./Pages/Profile";
 import ErrorPage from "./Pages/ErrorPage";
 import Messages from "./Pages/Messages";
 import Settings from "./Pages/Settings";
+import About from "./Pages/About";
+import Conversations from "./Pages/Converstions";
+import Chats from "./Pages/Chats";
 
 
 function App() {
     return (
         <Router>
             <nav>
-                <Link to="/">Home</Link>
-                <Link to="/about" >About </Link>
-                <Link to="/profile" >Profile </Link>
-                <Link to="/messages" >messages</Link>
-                <Link to="/settings" >settings</Link>
+                <div>
+                    <Link to="/">Home</Link>
+                </div>
+                <div>
+                    <Link to="/about" >About </Link>
+                </div>
+                <div>
+                    <Link to="/messages" >messages</Link>
+                </div>
+                <div>
+                    <Link to="/settings" >settings</Link>
+                </div>
+
+
+
+
 
             </nav>
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/profile/:username" element={<Profile/>} />
-                <Route path="*" element={<ErrorPage/>} />
+                <Route path="/about" element={<About />} />
+                <Route path="/conversations" element={<Conversations />} />
+                <Route path="/chats" element={<Chats />} />
+
                 <Route path="/messages" element={<Messages />} />
                 <Route path="/settings" element={<Settings />} />
+                <Route path="*" element={<ErrorPage/>} />
 
 
             </Routes>
